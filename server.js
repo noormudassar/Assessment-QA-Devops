@@ -1,3 +1,4 @@
+const path = require("path");
 const express = require("express");
 const bots = require("./src/botsData");
 const shuffle = require("./src/shuffle");
@@ -9,6 +10,11 @@ const playerRecord = {
 const app = express();
 
 app.use(express.json());
+app.use(express.static("public"));
+
+app.get("/", (req, res) => {
+  res.sendFile(path.join(__dirname, "./public/index.html"));
+});
 
 // Add up the total health of all the robots
 const calculateTotalHealth = (robots) =>
