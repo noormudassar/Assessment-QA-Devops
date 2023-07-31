@@ -1,5 +1,7 @@
 const shuffle = require("../src/shuffle");
 
 describe("shuffle should...", () => {
-  // CODE HERE
+  test("shuffle returns an array", () => {
+    expect(shuffle().toBeInstanceOf(Array));
+  });
 });
