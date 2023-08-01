@@ -12,6 +12,13 @@ const app = express();
 app.use(express.json());
 app.use(express.static("public"));
 
+var Rollbar = require("rollbar");
+var rollbar = new Rollbar({
+  accessToken: "a7ff221db8d0474681a6bc1212c61d4f",
+  captureUncaught: true,
+  captureUnhandledRejections: true,
+});
+
 app.get("/", (req, res) => {
   res.sendFile(path.join(__dirname, "./public/index.html"));
 });
