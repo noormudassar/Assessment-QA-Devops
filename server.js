@@ -50,8 +50,10 @@ const calculateHealthAfterAttack = ({ playerDuo, compDuo }) => {
 
 app.get("/api/robots", (req, res) => {
   try {
+    rollbar.info("Getting robot info");
     res.status(200).send(botsArr);
   } catch (error) {
+    rollbar.error("ERROR GETTING BOTS", error);
     console.error("ERROR GETTING BOTS", error);
     res.sendStatus(400);
   }
@@ -60,6 +62,7 @@ app.get("/api/robots", (req, res) => {
 app.get("/api/robots/shuffled", (req, res) => {
   try {
     let shuffled = shuffle(bots);
+    rollbar.info("Bots shuffled");
     res.status(200).send(shuffled);
   } catch (error) {
     console.error("ERROR GETTING SHUFFLED BOTS", error);
@@ -85,6 +88,7 @@ app.post("/api/duel", (req, res) => {
       res.status(200).send("You won!");
     }
   } catch (error) {
+    rollbar.error("ERROR DUELING", error);
     console.log("ERROR DUELING", error);
     res.sendStatus(400);
   }
@@ -92,8 +96,10 @@ app.post("/api/duel", (req, res) => {
 
 app.get("/api/player", (req, res) => {
   try {
+    rollbar.warning("Getting player record");
     res.status(200).send(playerRecord);
   } catch (error) {
+    rollbar.error("ERROR GETTING PLAYER STATS", error);
     console.log("ERROR GETTING PLAYER STATS", error);
     res.sendStatus(400);
   }
