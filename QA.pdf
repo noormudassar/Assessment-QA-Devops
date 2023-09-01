@@ -1,0 +1,37 @@
+Bug Report 1:
+
+Description: The tracer for wins and lossess records every instance of a winning duel as a loss.
+
+Steps: 
+1 - Navigate to draw for a duel
+2 - Select two robots and click duel
+3 - Play until one robot wins
+4 - Note the changes to the scoreboard with each win / loss
+
+Expected: Wins should +1
+
+Actual: Lossess +1
+
+Environment: 
+Google Chrome 
+On Macbook
+via https://github.com/noormudassar/Assessment-QA-Devops
+
+
+Bug Report 2: 
+
+Description: Showing a list of all bots does not do anything.
+
+Steps: 
+1 - Open game link in browser
+2 - Select see all bots button
+3 - See the list of all bots
+
+Expected: A list of all bots show on the page
+
+Actual: No changes to the webpage
+
+Environment: 
+Google Chrome 
+On Macbook
+via https://github.com/noormudassar/Assessment-QA-Devops
