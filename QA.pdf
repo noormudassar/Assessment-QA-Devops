@@ -35,3 +35,23 @@ Environment:
 Google Chrome 
 On Macbook
 via https://github.com/noormudassar/Assessment-QA-Devops
+
+
+Test Case - Selecting more than two robots for dueling
+
+Description: This test will verify that the user is unable to select more than two robots.
+
+Steps:
+1 - Run app using npm start
+2 - Go to the app
+3 - Click on draw button
+4 - Click the add to duo card 
+5 - Repeat steps 1 - 4 so there are three cards/robots in total
+
+Test Post Conditions: 
+The page displays alert that "only two robots can be chosen!"
+
+Execution Environment 8/30/23
+Google Chrome 
+On Macbook
+via https://github.com/noormudassar/Assessment-QA-Devops
